@@ -1,0 +1,58 @@
+{
+  "formations": [
+    {
+      "nom": "Javascript",
+      "chargeH": 8,
+      "typeF": "code",
+      "note": 10
+    },
+    {
+      "nom": "Angular",
+      "chargeH": 8,
+      "typeF": "code",
+      "note": 9
+    },
+    {
+      "nom": "TypeScript",
+      "chargeH": 0,
+      "typeF": "code",
+      "note": 10
+    },
+    {
+      "nom": "Ergonomie",
+      "chargeH": 8,
+      "typeF": "book",
+      "note": 7
+    },
+    {
+      "nom": "NodeJS",
+      "chargeH": 40,
+      "typeF": "code",
+      "note": 4
+    },
+    {
+      "nom": "Modélisation NoSQL",
+      "chargeH": 8,
+      "typeF": "book",
+      "note": 2
+    },
+    {
+      "nom": "MongoDB",
+      "chargeH": 28,
+      "typeF": "database",
+      "note": 8
+    },
+    {
+      "nom": "ELK",
+      "chargeH": 8,
+      "typeF": "indexation",
+      "note": 8
+    }
+  ],
+  "user": [{
+    "id": 1,
+    "nom": "Doe",
+    "prenom": "John",
+    "role": "administrateur"
+  }]
+}
