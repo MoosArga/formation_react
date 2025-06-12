@@ -39,7 +39,7 @@ export default function FormationManager({ formations, title }: Props): JSX.Elem
             </div>
             <div>{ currentDate }</div>
             <FormationCounter></FormationCounter>
-        </>
+        </> 
     )
 
 }

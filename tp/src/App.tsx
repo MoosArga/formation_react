@@ -1,6 +1,7 @@
 import type { JSX } from 'react'
 import FormationManager from './FormationManager'
 import type { Formation } from './models/formation';
+import { ErrorContextProvider } from './context/errorContext';
 
 export default function App(): JSX.Element {
 
@@ -30,7 +31,9 @@ export default function App(): JSX.Element {
 
   return (
     <>
-      <FormationManager formations={formations} title="Titre avec toto"></FormationManager>
+      <ErrorContextProvider>
+        <FormationManager formations={formations} title="Titre avec toto"></FormationManager>
+      </ErrorContextProvider>
     </>
   )
 }
