@@ -1,0 +1,15 @@
+- **JSX :** Mélange entre JS et HTML. Templating qu'on peut exploiter côté JS 
+- **Composant :** Bloc réutilisable de l'interface 
+    - Functionnal Component : Fonction (React.FC qui retournent des JSX.Element) permettent d'utiliser les hooks 
+    - Pure function
+- **Les Hooks :** Fonctions qui permettent de gérer le state management
+    - *useState :* permet de modifier un state, se décline dans un couple [valeur, setValeur]. setValeur soit une valeur brute, soit une fonction avec l'ancienne valeur
+    - *useEffect :* Exécuté après le rendu, en fonction des dépenances. useEffect(() => { ... }, [dependances])
+- **Style :** Différentes architectures et différentes façons d'appliquer du style 
+    - *style* : style inline dans une balise HTML 
+    - *classe CSS statique* : classe CSS en dur (chaine de caractères)
+    - *CSS module* : import en JS / TS
+- **Vite :**  Bundle qui m'a permis de générer mon projet :    
+    - Préparer un environnement de dev local 
+    - Préparer le build de production de mon application 
+    - Linter, Tests automatisés, ...

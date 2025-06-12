@@ -63,6 +63,22 @@
       "typeF": "indexation",
       "note": 8
     }
+    ,
+    {
+      "id": 10,
+      "nom": "Postgresql",
+      "chargeH": 8,
+      "typeF": "indexation",
+      "note": 8
+    }
+    ,
+    {
+      "id": 11,
+      "nom": "Neo4J",
+      "chargeH": 8,
+      "typeF": "indexation",
+      "note": 8
+    }
   ],
   "user": [{
     "id": 1,

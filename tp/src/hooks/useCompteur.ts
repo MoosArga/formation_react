@@ -21,7 +21,11 @@ export function useCompteur(): CompteurHook {
     const previousValue = useRef<number | null>(null);
     const [canUndo, setCanUndo] = useState<boolean>(previousValue.current !== null)
 
-    const [counter, dispatchCounter] = useReducer<number, number, [Action]>(counterReducer, 0, () => Number.parseInt(localStorage.getItem('counter') ?? '0'))
+    const [counter, dispatchCounter] = useReducer<number, number, [Action]>(
+        counterReducer, // Fonction de réduction
+        0, // Valeur à la création
+        () => Number.parseInt(localStorage.getItem('counter') ?? '0') // Valeur à l'initialisation
+    )
 
     useEffect(() => {
         localStorage.setItem('counter', counter.toString())
