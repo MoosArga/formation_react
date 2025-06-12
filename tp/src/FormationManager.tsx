@@ -2,17 +2,20 @@ import { type JSX } from "react";
 import FormationCounter from "./FormationCounter";
 import styles from "./FormationManager.module.css";
 import useFormations from "./hooks/useFormations";
+import { Link } from "react-router-dom";
 
 export default function FormationManager(): JSX.Element {
 
     const currentDate = (new Date()).toISOString();
-    const { formations, stats, refresh }  = useFormations();
+    const { formations, stats, refresh, loading }  = useFormations();
 
     return (
         <>
             <h1>Mes formations</h1>
             { formations?.length && (<div>
-                    <button onClick={() => refresh()}>Refresh</button>
+                    <button onClick={() => refresh()}>Refresh 
+                        { loading && ' ...' }
+                    </button>
                     <table>
                         <thead>
                             <tr>
@@ -25,7 +28,7 @@ export default function FormationManager(): JSX.Element {
                         <tbody>
                             { formations.map(f => f.chargeH > 0 && (
                                 <tr key={f.id} className={f.chargeH > 20 ? styles.formationHeavy : undefined}>
-                                    <td>{ f.nom }</td>
+                                    <td><Link to={`/formations/${f.id}`}>{ f.nom }</Link></td>
                                     <td>{ f.chargeH }</td>
                                     <td>{ f.typeF }</td>
                                     <td>{ f.note }</td>

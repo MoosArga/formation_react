@@ -22,42 +22,42 @@
       "note": 9
     },
     {
-      "id": 4,
+      "id": "4",
       "nom": "TypeScript",
       "chargeH": 0,
       "typeF": "code",
       "note": 10
     },
     {
-      "id": 5,
+      "id": "5",
       "nom": "Ergonomie",
       "chargeH": 8,
       "typeF": "book",
       "note": 7
     },
     {
-      "id": 6,
+      "id": "6",
       "nom": "NodeJS",
       "chargeH": 40,
       "typeF": "code",
       "note": 4
     },
     {
-      "id": 7,
+      "id": "7",
       "nom": "Modélisation NoSQL",
       "chargeH": 8,
       "typeF": "book",
       "note": 2
     },
     {
-      "id": 8,
+      "id": "8",
       "nom": "MongoDB",
       "chargeH": 28,
       "typeF": "database",
       "note": 8
     },
     {
-      "id": 9,
+      "id": "9",
       "nom": "ELK",
       "chargeH": 8,
       "typeF": "indexation",
@@ -65,23 +65,15 @@
     }
     ,
     {
-      "id": 10,
+      "id": "10",
       "nom": "Postgresql",
-      "chargeH": 8,
-      "typeF": "indexation",
-      "note": 8
-    }
-    ,
-    {
-      "id": 11,
-      "nom": "Neo4J",
       "chargeH": 8,
       "typeF": "indexation",
       "note": 8
     }
   ],
   "user": [{
-    "id": 1,
+    "id": "1",
     "nom": "Doe",
     "prenom": "John",
     "role": "administrateur"

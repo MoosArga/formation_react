@@ -1,12 +1,19 @@
 import type { JSX } from 'react';
+import { Outlet } from 'react-router-dom';
 import { ErrorContextProvider } from './context/errorContext';
-import FormationManager from './FormationManager';
+import { UserContextProvider } from './context/userContext';
+import Header from './layout/Header';
 
 export default function App(): JSX.Element {
   return (
     <>
       <ErrorContextProvider>
-        <FormationManager></FormationManager>
+        <UserContextProvider>
+          <>
+            <Header></Header>
+            <Outlet />
+          </>
+        </UserContextProvider>
       </ErrorContextProvider>
     </>
   )
