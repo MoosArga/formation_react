@@ -30,7 +30,7 @@ export default function App(): JSX.Element {
 
   return (
     <>
-      <FormationManager formations={formations}></FormationManager>
+      <FormationManager formations={formations} title="Titre avec toto"></FormationManager>
     </>
   )
 }

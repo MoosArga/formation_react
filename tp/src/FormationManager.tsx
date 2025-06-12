@@ -1,7 +1,7 @@
 import { type JSX } from "react";
-import type { Formation } from "./models/formation";
-import styles from "./FormationManager.module.css";
 import FormationCounter from "./FormationCounter";
+import styles from "./FormationManager.module.css";
+import type { Formation } from "./models/formation";
 
 type Props = {
     formations: Formation[],
