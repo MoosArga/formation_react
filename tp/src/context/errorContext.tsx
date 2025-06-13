@@ -1,4 +1,5 @@
-import { createContext, useContext, useMemo, useState, type JSX } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, type JSX } from "react";
+import errorObservable from "../observer/ErrorObservable";
 
 interface ErrorContextModel {
     hasError: boolean;
@@ -12,6 +13,18 @@ export function ErrorContextProvider({ children }: { children: JSX.Element }) {
 
     const [errorMessage, setErrorMessage] = useState<string>('')
     const hasError = useMemo(() => !!errorMessage, [errorMessage])
+
+    const errorObsCb = useCallback((message: string) => {
+        setErrorMessage(message);
+    }, []);
+
+    useEffect(() => {
+        return () => {
+            errorObservable.unsubscribe(errorObsCb);
+        }
+    }, []);
+
+    errorObservable.subscribe(errorObsCb);
 
     return (
         <ErrorContext.Provider value={{ hasError, errorMessage, setErrorMessage }}>
