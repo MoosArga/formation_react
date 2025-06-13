@@ -4,6 +4,7 @@ import FormationCounter from "./FormationCounter";
 import styles from "./FormationManager.module.css";
 import useFormations from "./hooks/useFormations";
 import FormationForm from "./FormationForm";
+import DateForm from "./DateForm";
 
 export default function FormationManager(): JSX.Element {
 
@@ -59,6 +60,7 @@ export default function FormationManager(): JSX.Element {
                         </tbody>
                     </table>
                     <FormationForm></FormationForm>
+                    <DateForm></DateForm>
                 </div>
             )}
             <div>{ currentDate }</div>

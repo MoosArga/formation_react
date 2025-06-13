@@ -19,13 +19,12 @@ export function ErrorContextProvider({ children }: { children: JSX.Element }) {
     }, []);
 
     useEffect(() => {
+        errorObservable.subscribe(errorObsCb);
         return () => {
             errorObservable.unsubscribe(errorObsCb);
         }
     }, []);
-
-    errorObservable.subscribe(errorObsCb);
-
+   
     return (
         <ErrorContext.Provider value={{ hasError, errorMessage, setErrorMessage }}>
             { !hasError ? children : <div>{ errorMessage }</div> }

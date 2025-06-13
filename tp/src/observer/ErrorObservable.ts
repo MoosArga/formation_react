@@ -4,6 +4,7 @@ type ErrorMessageCb = (errorMsg: string) => void
 class ErrorObservable {
 
     private observers: ErrorMessageCb[] = [];
+    private notifiyTimeoutId?: number;
 
     constructor() {}
 
@@ -19,9 +20,14 @@ class ErrorObservable {
     }
 
     notify(error: string) {
-        this.observers.forEach(obs => {
-            obs(error);
-        });
+        if (this.notifiyTimeoutId) {
+            clearTimeout(this.notifiyTimeoutId)
+        }
+        this.notifiyTimeoutId = setTimeout(() => {
+            this.observers.forEach(obs => {
+                obs(error);
+            });
+        }, 300)
     }
 
 }
