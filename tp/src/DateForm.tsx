@@ -1,5 +1,6 @@
 import { date, object, string } from "yup"
 import useForm from "./hooks/useForm"
+import TextFieldControlled from "./components/TextFieldControlled"
 
 type DateFormModel = {
     date: string,
@@ -27,10 +28,7 @@ export default function DateForm() {
                     <label>Date</label>
                     <input type="date" value={dateForm.date} {...register('date')} />
                 </div>
-                <div className="form-entry">
-                    <label>Numéro de sécu</label>
-                    <input type="text" value={dateForm.numSecu} {...register('numSecu')} />
-                </div>
+                <TextFieldControlled name="numSecu" value={dateForm.numSecu} errors={errors} register={register} label="Numéro de secu"  ></TextFieldControlled>
             </form>
             { errors && (
                 <>
