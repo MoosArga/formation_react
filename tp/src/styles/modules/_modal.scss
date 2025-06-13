@@ -1,0 +1,18 @@
+@use '../vars' as  *;
+
+.modal {
+  @include flex-horizontal-vcentered;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: $z-index-modal;
+  background-color: rgba($color: black, $alpha: 0.7);
+}
+
+.modal-content {
+  position: relative;
+  z-index: $z-index-modal-overlay;
+}

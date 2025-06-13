@@ -1,8 +1,9 @@
 import { type JSX } from "react";
+import { Link } from "react-router-dom";
 import FormationCounter from "./FormationCounter";
 import styles from "./FormationManager.module.css";
 import useFormations from "./hooks/useFormations";
-import { Link } from "react-router-dom";
+import FormationForm from "./FormationForm";
 
 export default function FormationManager(): JSX.Element {
 
@@ -10,10 +11,10 @@ export default function FormationManager(): JSX.Element {
     const { formations, stats, refresh, loading }  = useFormations();
 
     return (
-        <>
+        <div className="formation">
             <h1>Mes formations</h1>
-            { formations?.length && (<div>
-                    <button onClick={() => refresh()}>Refresh 
+            { formations?.length && (<div className="formation-list">
+                    <button className="button-primary" onClick={() => refresh()}>Refresh 
                         { loading && ' ...' }
                     </button>
                     <table>
@@ -57,11 +58,12 @@ export default function FormationManager(): JSX.Element {
                             }
                         </tbody>
                     </table>
+                    <FormationForm></FormationForm>
                 </div>
             )}
             <div>{ currentDate }</div>
             <FormationCounter></FormationCounter>
-        </> 
+        </div> 
     )
 
 }

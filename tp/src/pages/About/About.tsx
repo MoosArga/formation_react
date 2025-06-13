@@ -11,7 +11,7 @@ export default function About(): JSX.Element {
   
   return (
     <>
-        <button onClick={retour}>Retour</button>
+        <button className="button-primary" onClick={retour}>Retour</button>
         <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
         minus pariatur maiores eum minima repellat laborum blanditiis hic, ea vero

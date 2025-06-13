@@ -1,0 +1,30 @@
+@use '../vars' as  *;
+
+
+.form {
+  @include flex-vertical;
+  > * + * {
+    margin-top: 20px;
+  }
+}
+
+.form-entry {
+  @include flex-horizontal-vcentered;
+  > * + *  {
+    margin-left: 5px;
+  }
+}
+
+.form-entry-option {
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+.form-msg-error {
+  color: $color-fail;
+  padding: 5px 10px;
+  border: 2px solid rgba($color: $color-fail, $alpha: 0.5) ;
+  border-radius: $radius-round;
+  font-weight: bold;
+}

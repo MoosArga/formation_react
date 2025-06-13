@@ -1,11 +1,13 @@
 import { useEffect, useState, type JSX } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type { Formation } from "../../models/formation";
+import useFormations from "../../hooks/useFormations";
 
 export default function FormationDetail(): JSX.Element {
 
     const [formation, setFormation] = useState<Formation>();
     const { idFormation } = useParams<{ idFormation: string }>()
+    const { formations } = useFormations();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,8 +23,11 @@ export default function FormationDetail(): JSX.Element {
     }, [idFormation])
 
     function next() {
-        const newIdFormation = (+idFormation! + 1).toString()
-        navigate(`/formations/${newIdFormation}`)
+        const indexFormation = formations.findIndex(f => f.id === idFormation);
+        if (indexFormation < formations.length - 1) {
+            const newIdFormation = formations[indexFormation + 1].id
+            navigate(`/formations/${newIdFormation}`)
+        }
     }
 
     return (
@@ -31,7 +36,7 @@ export default function FormationDetail(): JSX.Element {
             <div>{formation?.typeF}</div>
             <div>{formation?.note}</div>
             <div>{formation?.chargeH}</div>
-            <button onClick={next}>Next</button>
+            <button className="button-primary" onClick={next}>Next</button>
         </>
     )
 

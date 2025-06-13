@@ -1,0 +1,14 @@
+@use '../vars' as  *;
+
+.title {
+  font-weight: bold;
+  color: $color-primary-dark;
+  margin: 0;
+  line-height: 1;
+}
+
+.title-secondary {
+  font-size: $font-size-md;
+  font-weight: 500;
+  color: $color-primary;
+}

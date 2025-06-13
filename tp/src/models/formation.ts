@@ -1,9 +1,9 @@
-export interface Formation {
+export class Formation {
 
-    id: string;
-    nom: string;
-    chargeH: number;
-    typeF: string;
-    note: number;
+    id?: string;
+    nom: string = '';
+    chargeH: number = 0;
+    typeF: string = '';
+    note: number = 0;
 
 }

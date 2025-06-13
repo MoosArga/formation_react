@@ -1,0 +1,213 @@
+// Font families
+
+@use "fonts";
+
+$font-main: "Roobert";
+$font-accent: "Roobert";
+
+// Font-size
+
+$font-size-tn: 11px;
+$font-size-sm: 14px;
+$font-size-md: 18px;
+$font-size-lg: 24px;
+$font-size-hg: 30px;
+
+// Colors
+$color-primary-extra-dark: #0D1C26;
+
+$color-primary-dark: #304959;
+$color-primary: #687E8C;
+$color-primary-light: #A4B5BF;
+$color-primary-extra-light: #77BFCE;
+
+$color-grey-dark: #808080;
+$color-grey: #A6A6A6;
+$color-grey-light: #BFBFBF;
+$color-grey-extra-light: #E6E6E6;
+$color-grey-lightest: #f5f5f5;
+
+$color-accent: #6F4BF2;
+$color-accent-dark: #312167;
+
+$color-success: #98A848;
+
+$color-fail: #c15a61;
+
+$color-legendary: #D4AF37;
+
+// Z-Index
+
+$z-index-background: 1;
+$z-index-tooltip: 20;
+$z-index-sidebar: 30;
+$z-index-menu: 40;
+$z-index-modal: 50;
+$z-index-modal-overlay: 60;
+
+// Border radius
+
+$radius-round: 5px;
+$radius-ellipse: 12px;
+
+// Flex mixins
+
+@mixin flex-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-horizontal-vcentered {
+  @include flex-horizontal();
+  align-items: center;
+}
+
+@mixin flex-vertical-hcentered {
+  @include flex-vertical();
+  align-items: center;
+}
+
+// Mixins for style HTML Widgets
+
+@mixin style-input-range($trackColor, $thumbColor) {
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background-color: $trackColor;
+    border-width: 0px;
+    border-radius: $radius-round;
+  }
+
+  &::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid $thumbColor;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: $thumbColor;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background-color: $trackColor;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background-color: $trackColor;
+    border-width: 0px;
+    border-radius: $radius-round;
+  }
+
+  &::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid $thumbColor;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: $thumbColor;
+    cursor: pointer;
+  }
+
+  &::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    background-color: $trackColor;
+    border-width: 0px;
+    border-radius: $radius-round;
+  }
+
+  &::-ms-fill-upper {
+    background-color: $trackColor;
+    border-width: 0px;
+    border-radius: $radius-round;
+  }
+
+  &::-ms-thumb {
+    margin-top: 1px;
+    border: 1px solid $thumbColor;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: $thumbColor;
+    cursor: pointer;
+  }
+
+  &:focus::-ms-fill-lower {
+    background-color: $trackColor;
+  }
+
+  &:focus::-ms-fill-upper {
+    background-color: $trackColor;
+  }
+}
+
+@mixin toggle-group {
+  @include flex-horizontal-vcentered;
+  justify-content: center;
+  > * {
+    border-width: 2px;
+    border-style: solid;
+  }
+  > * + * {
+    border-left-width: 0;
+  }
+  > *:first-child {
+    border-radius: $radius-round 0 0 $radius-round;
+  }
+  > *:last-child {
+    border-radius: 0 $radius-round $radius-round 0;
+  }
+}
+
+@mixin toggle-group-entry($main-color, $opposite-color) {
+  padding: 5px 10px;
+  width: 90px;
+  text-align: center;
+  font-size: $font-size-sm;
+  border-color: $opposite-color;
+  font-weight: bold;
+  color: $opposite-color;
+  background-color: $main-color;
+  cursor: pointer;
+  &:hover, &.active {
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    background-color: $opposite-color;
+    color: $main-color;
+  }
+  &:has(~ .active) {
+    border-right-width: 0;
+  }
+}
+
+@mixin colorize-mat-input($color) {
+  &.mat-form-field-appearance-standard {
+     .mat-form-field-underline {
+      background-color: $color !important;
+    }
+    .mat-form-field-label {
+      color: $color !important;
+    }
+  }
+  input.mat-input-element {
+    color: $color !important;
+  }
+}

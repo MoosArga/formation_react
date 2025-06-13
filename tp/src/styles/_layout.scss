@@ -1,0 +1,80 @@
+@use 'vars' as  *;
+
+#header {
+  @include flex-horizontal-vcentered;
+  height: 90px;
+  background-color: $color-primary-extra-dark;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: white;
+  &.l-header-warn-mode {
+    background: repeating-linear-gradient(
+      45deg,
+      $color-primary-extra-dark 0px,
+      $color-primary-extra-dark 20px,
+      #591e1e 20px,
+      #591e1e 40px
+  );
+  }
+}
+
+#app-title-container {
+  @include flex-horizontal-vcentered;
+  cursor: pointer;
+}
+
+#app-logo {
+  height: 70px;
+}
+
+#app-title {
+  color: white !important;
+  font-weight: bold ;
+  font-size: 32px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  position: relative;
+  padding-left: 30px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 50px;
+    background-color: white;
+    border-radius: 15px;
+  }
+}
+
+#menu {
+  @include flex-horizontal-vcentered;
+  > * + * {
+    margin-left: 10px;
+  }
+}
+
+.l-menu-entry {
+  @include flex-horizontal-vcentered;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 10px 15px;
+  color: white !important;
+  > * {
+    margin-right: 5px;
+  }
+  &:hover, &.l-menu-entry-active {
+    background-color: $color-accent;
+  }
+}
+
+#header + #main-content {
+  padding: 10px 50px 0;
+  max-height: calc(100vh - 90px);
+}
+
+#main-content {
+  max-height: 100vh;
+  overflow: auto;
+}

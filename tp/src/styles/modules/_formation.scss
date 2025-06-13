@@ -1,0 +1,21 @@
+@use '../vars' as  *;
+
+.formation {
+    padding: 20px;
+    > * + * {
+        margin-top: 20px;
+    }
+} 
+
+.formation-list {
+    > * + * {
+        margin-top: 20px;
+    }
+}
+
+.formation-counter {
+    @include flex-horizontal-vcentered;
+    > * + * {
+        margin-left: 10px;
+    }
+}

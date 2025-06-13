@@ -1,0 +1,105 @@
+@use 'vars' as  *;
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: $font-main;
+}
+
+body {
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: black;
+  }
+
+  &:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  &:active {
+    text-decoration: underline;
+    color: black;
+  }
+}
+
+input, select {
+  border-style: solid;
+  border-radius: $radius-round;
+  border-color: $color-grey-dark;
+  padding: 2px 5px;
+  &:focus {
+    border-color: $color-primary-extra-light;
+    outline: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-primary-dark;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: auto;
+  tr {
+    padding: 5px 5px;
+  }
+  &, th, td {
+    border: 1px solid $color-grey-dark;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    text-align: center;
+  }
+  thead tr + tr {
+    border-top: 2px solid rgba($color: $color-grey, $alpha: 0.1);
+  }
+  th {
+    padding: 15px 20px;
+    font-weight: normal;
+  }
+  td {
+    padding: 20px 20px;
+  }
+  td + td, th + th {
+    border-left: 2px solid rgba($color: $color-grey, $alpha: 0.1);
+  }
+  td:not(:last-child), th:not(:last-child) {
+    border-right: 2px solid rgba($color: $color-grey, $alpha: 0.1);
+  }
+  tbody tr {
+    &:nth-child(odd) {
+      background-color: rgba($color: $color-grey-light, $alpha: 0.2);
+    }
+    &:nth-child(even) {
+      background-color: rgba($color: $color-grey-lightest, $alpha: 0.2);
+    }
+  }
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  @include style-input-range($color-primary-light, $color-accent);
+  margin: 10px 0;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
